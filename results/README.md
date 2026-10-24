@@ -10,7 +10,7 @@ These are completed reruns, not the saved outputs of the exploratory notebooks. 
 | [validation_ablations.csv](validation_ablations.csv) | One training/sampling configuration on 64 fixed validation triplets. `description` states what changed. These rows are **not test results**. | `evaluate_refiner.py --split val --limit 64` → `report_refiners.py` → `export_results.py` |
 | [paired_comparisons.csv](paired_comparisons.csv) | Method minus baseline, with a paired 95% bootstrap interval. `scope` is full frame, a diagnostic region, or the interior after removing a 16px border. | The report scripts and `evaluate_interior.py` → `export_results.py` |
 
-[study.json](study.json) contains the pinned data sources and exclusion report, the selected heuristic strength, runtime measurements, subgroup analysis and demo reference scores. The notebook reads these saved results; it does not silently train new models.
+[study.json](study.json) contains dataset links and split sizes, the selected heuristic strength, runtime measurements, subgroup analysis and demo reference scores. The notebook reads these saved results; it does not silently train new models.
 
 **Metrics:** PSNR/SSIM/MAE are averages over images; MAE/MSE use RGB in [0,1]. SSIM uses a 7×7 uniform window and sample covariance. Regional PSNR pools squared error and pixel counts. `dis` is warp disagreement >0.04, `occ` is a flow-consistency/coverage proxy, and `boundary` is flow variation >1 pixel. These are not ground-truth visibility annotations. LPIPS is measured for the refiner study; empty mask-family LPIPS cells mean it was not measured in that evaluation. `lpips_window` uses the 128×128 window with greatest warp disagreement.
 

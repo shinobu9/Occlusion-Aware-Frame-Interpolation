@@ -19,7 +19,7 @@ Given two endpoint frames, frozen RAFT-small estimates motion and forward-warps 
 | `scripts/` | Data preparation, training, evaluation and result aggregation only |
 | `checkpoints/` | Three inference models: primary mask, L1 refiner, baseline FM; each has its training config |
 | `results/` | **Three final CSV files**, their explanation, and one study metadata JSON |
-| `data/*_manifest.json` | Exact sequence IDs and decoded-frame hashes for the published split |
+| `data/*_manifest.json` | Sequence ID lists for the published train/val/test split |
 | `demo/`, `figures/` | Small held-out demo bundle, video and three result figures |
 | `presentation/` | Final PDF and PPTX only |
 
@@ -63,7 +63,7 @@ python scripts/evaluate_interior.py
 python scripts/benchmark.py
 ```
 
-`prepare_data.py` pins the dataset revisions and recreates the manifests. Train/validation candidates are checked against all 3,782 test triplets by ID and decoded RGB-frame SHA-256. Directory-prefix groups separate train and validation, but are not verified original-video IDs; similar scenes may remain.
+Dataset sources: [training/validation mirror](https://huggingface.co/datasets/bijinc/vimeo-90k-medium) and [test mirror](https://huggingface.co/datasets/paschalc24/vimeo-90k-test-full). `prepare_data.py` downloads their current files and selects the sequence IDs listed in `data/*_manifest.json`. These lists preserve the published split. Train and validation use different directory-prefix groups; these are not verified original-video IDs, so similar scenes may remain.
 
 ## Reproduce the refiner comparison
 

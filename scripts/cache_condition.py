@@ -1,7 +1,5 @@
 """Freeze seed-42 mask predictions for the matched residual-refiner experiments."""
 import argparse
-import hashlib
-import json
 from pathlib import Path
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
@@ -34,9 +32,7 @@ def main():
                 if i % 400 == 0:
                     print(f"condition {s}: {i+len(f)}/{len(data)}", flush=True)
             out.flush()
-    (args.data / "condition_report.json").write_text(json.dumps(dict(mask=str(args.mask),
-        sha256=hashlib.sha256(args.mask.read_bytes()).hexdigest(), selected_seed=42,
-        selection="seed fixed in advance, best checkpoint by validation dis PSNR"), indent=2))
+
 
 
 if __name__ == "__main__":

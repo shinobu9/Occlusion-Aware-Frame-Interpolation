@@ -53,7 +53,12 @@ comparisons[['family','scope','method','baseline','metric','delta','ci_lo','ci_h
 read_json = lambda name: json.loads((ART / name).read_text())
 per = pd.read_csv(ART / 'mask_metrics_per_triplet.csv')
 keys = np.load(ROOT / 'demo/demo_triplets.npz')['keys'].tolist()
-data_report = json.loads((ROOT / 'data/data_report.json').read_text())
+source_report = json.loads((ROOT / 'data/data_report.json').read_text())
+data_report = dict(train_source='https://huggingface.co/datasets/bijinc/vimeo-90k-medium',
+                   test_source='https://huggingface.co/datasets/paschalc24/vimeo-90k-test-full',
+                   counts=source_report['counts'],
+                   split_rule='Fixed sequence IDs from the published train/val/test lists',
+                   limitation=source_report['limitation'], frame_order=source_report['frame_order'])
 primary = mask.set_index('method')
 refiners = ref.set_index('method')
 gain = primary.loc['mask_s42','psnr']-primary.loc['fixed','psnr']
