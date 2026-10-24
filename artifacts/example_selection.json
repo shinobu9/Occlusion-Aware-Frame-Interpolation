@@ -1,0 +1,20 @@
+[
+  {
+    "label": "Improvement case (95th percentile interior gain)",
+    "key": "00022/0351",
+    "delta_psnr": 1.4501686096191406,
+    "interior_delta_psnr": 1.3267745971679688
+  },
+  {
+    "label": "Typical case (median gain)",
+    "key": "00035/0746",
+    "delta_psnr": 0.17836761474609375,
+    "interior_delta_psnr": 0.18575668334960938
+  },
+  {
+    "label": "Failure case (5th percentile gain)",
+    "key": "00013/0619",
+    "delta_psnr": -0.37816429138183594,
+    "interior_delta_psnr": -0.3782196044921875
+  }
+]

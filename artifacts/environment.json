@@ -1,0 +1,19 @@
+{
+  "torch": "2.14.1+cu126",
+  "torchvision": "0.29.1+cu126",
+  "numpy": "2.5.4",
+  "pandas": "3.1.0",
+  "pyarrow": "26.0.0",
+  "scikit-image": "0.26.0",
+  "lpips": "0.1.4",
+  "matplotlib": "3.11.2",
+  "Pillow": "13.0.0",
+  "requests": "2.34.2",
+  "tqdm": "4.70.1",
+  "nbformat": "5.11.1",
+  "nbclient": "0.11.0",
+  "ipykernel": "7.4.0",
+  "python-pptx": "1.0.2",
+  "imageio": "2.38.1",
+  "imageio-ffmpeg": "0.6.0"
+}

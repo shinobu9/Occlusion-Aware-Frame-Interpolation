@@ -1,0 +1,6 @@
+{
+  "mask": "runs/mask_s42/best.pt",
+  "sha256": "ff4595c337546e7e98722923f0ad8344f461ea00ec9844005856a9189bf3c435",
+  "selected_seed": 42,
+  "selection": "seed fixed in advance, best checkpoint by validation dis PSNR"
+}

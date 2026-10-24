@@ -1,0 +1,10 @@
+{
+  "scores": {
+    "fm": 21.15555988001305,
+    "fm_ema": 20.61174306408666,
+    "fm_ema_lognormal": 20.11780389619191,
+    "fm_ema_lognormal_cfg": 20.26650758438251
+  },
+  "selected": "fm",
+  "criterion": "best validation pooled PSNR dis, 64 fixed triplets; no test access"
+}

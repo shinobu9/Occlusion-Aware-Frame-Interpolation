@@ -1,0 +1,35 @@
+[
+  {
+    "train_row": 1164,
+    "train_triplet_index": 388,
+    "test_sequence": "00001/0389",
+    "frame": 1,
+    "byte_equal": true,
+    "pixel_equal": true,
+    "mae": 0.0,
+    "train_sha256": "8a018997edb76d0663a16c31c2fae65a3db09e9cb3bb9e2e45635060d74aab87",
+    "test_sha256": "8a018997edb76d0663a16c31c2fae65a3db09e9cb3bb9e2e45635060d74aab87"
+  },
+  {
+    "train_row": 1165,
+    "train_triplet_index": 388,
+    "test_sequence": "00001/0389",
+    "frame": 2,
+    "byte_equal": true,
+    "pixel_equal": true,
+    "mae": 0.0,
+    "train_sha256": "8d4945453d141227020d6b9881f81aa5169664cc33aee04642d8b2f790d6aebb",
+    "test_sha256": "8d4945453d141227020d6b9881f81aa5169664cc33aee04642d8b2f790d6aebb"
+  },
+  {
+    "train_row": 1166,
+    "train_triplet_index": 388,
+    "test_sequence": "00001/0389",
+    "frame": 3,
+    "byte_equal": true,
+    "pixel_equal": true,
+    "mae": 0.0,
+    "train_sha256": "1e8d422b7a7576d4898b13f16f4bff47d4a477cd31cd75834ce3afcc714cf89c",
+    "test_sha256": "1e8d422b7a7576d4898b13f16f4bff47d4a477cd31cd75834ce3afcc714cf89c"
+  }
+]

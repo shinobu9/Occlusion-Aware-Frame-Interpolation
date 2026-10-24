@@ -1,0 +1,57 @@
+{
+  "run": "runs/fm",
+  "split": "test",
+  "checkpoint": "best.pt",
+  "checkpoint_step": 2000,
+  "solver": "euler",
+  "steps": 20,
+  "guidance": 1.0,
+  "mean_samples": 4,
+  "refiner_ms_per_triplet": 188.18638282048343,
+  "batch_size": 4,
+  "summary": [
+    {
+      "method": "fm",
+      "n_triplets": 757,
+      "psnr": 32.45487024415594,
+      "ssim": 0.9468366027350785,
+      "mae": 0.01172492313666252,
+      "mse": 0.0008927147266709278,
+      "lpips": 0.03770157049841874,
+      "lpips_window": 0.06225328229071235,
+      "pooled_psnr_full": 30.492873102115947,
+      "pooled_psnr_dis": 20.99569567608261,
+      "pooled_psnr_occ": 23.845500299757987,
+      "pooled_psnr_boundary": 20.816868844805224
+    },
+    {
+      "method": "fm_dis",
+      "n_triplets": 757,
+      "psnr": 32.49577400328461,
+      "ssim": 0.9480349412839982,
+      "mae": 0.011417670104384442,
+      "mse": 0.0008911911959324602,
+      "lpips": 0.0413048904397755,
+      "lpips_window": 0.06495513946102142,
+      "pooled_psnr_full": 30.500291201307057,
+      "pooled_psnr_dis": 20.99569567608261,
+      "pooled_psnr_occ": 23.881571005539787,
+      "pooled_psnr_boundary": 20.84424017381086
+    },
+    {
+      "method": "learned",
+      "n_triplets": 757,
+      "psnr": 32.64364688273623,
+      "ssim": 0.9497029147500878,
+      "mae": 0.0112459825175289,
+      "mse": 0.0008711821038575339,
+      "lpips": 0.041965722101476026,
+      "lpips_window": 0.06478752494224346,
+      "pooled_psnr_full": 30.598910633984712,
+      "pooled_psnr_dis": 21.14385913339856,
+      "pooled_psnr_occ": 23.98151348404285,
+      "pooled_psnr_boundary": 20.941998461115404
+    }
+  ],
+  "seconds": 158.0231334809796
+}

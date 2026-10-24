@@ -1,0 +1,12 @@
+{
+  "gpu": "NVIDIA H100 80GB HBM3",
+  "resolution": "256x448",
+  "batch_size": 1,
+  "repetitions": 30,
+  "warmup": 5,
+  "torch": "2.14.1+cu126",
+  "precision": "fp32 with fp16 flow/features round-trip; TF32 convolution allowed",
+  "flow_warp_features_median_ms": 54.3658379901899,
+  "mask_and_blend_median_ms": 0.8399219950661063,
+  "full_pipeline_median_ms": 56.03903450537473
+}

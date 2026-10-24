@@ -1,0 +1,21 @@
+{
+  "data": "data",
+  "run": "runs/fm_ema",
+  "mode": "fm",
+  "seed": 42,
+  "steps": 12000,
+  "batch": 16,
+  "crop": 96,
+  "lr": 0.0002,
+  "eval_every": 2000,
+  "val_count": 64,
+  "ema": 0.999,
+  "time_density": "uniform",
+  "cfg_dropout": 0.0,
+  "torch": "2.14.1+cu126",
+  "cuda": "12.6",
+  "gpu": "NVIDIA H100 80GB HBM3",
+  "visible_gpu": "4",
+  "cudnn_benchmark": true,
+  "cudnn_allow_tf32": true
+}
