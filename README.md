@@ -4,6 +4,33 @@
 
 Given two endpoint frames, frozen RAFT-small estimates motion and forward-warps both frames to the midpoint. A 95,185-parameter CNN learns which warped frame to trust at each pixel. We compare it with fixed 50/50 and flow-consistency blending. This is a controlled study of established ideas, not a new algorithm or DLSS implementation.
 
+## Key results
+
+Evaluated on **3,782 held-out Vimeo-90K triplets**. **Bold values are best within each table**; ↑ means higher is better, ↓ means lower is better. PSNR, SSIM and MAE are averaged over images.
+
+**Primary comparison — identical frozen flow and warped inputs:**
+
+| Method | PSNR ↑ (dB) | SSIM ↑ | MAE ↓ |
+|---|---:|---:|---:|
+| Baseline 1: fixed 50/50 | 32.583 | 0.94730 | 0.011315 |
+| Baseline 2: flow-consistency heuristic | 32.664 | 0.94769 | 0.011159 |
+| **Our learned mask (seed 42)** | **32.917** | **0.95076** | **0.010812** |
+
+The mask gains **+0.334 dB** over fixed blending (paired 95% CI **[+0.314, +0.356]**) and **+0.253 dB** over the heuristic. All three mask seeds improve over fixed blending. Excluding a 16-pixel border still gives **+0.234 dB**.
+
+**Separate extension — larger 3.31M-parameter residual refiners:**
+
+| Method | PSNR ↑ (dB) | LPIPS ↓ |
+|---|---:|---:|
+| Mask only (shared cached reference) | 32.917 | 0.0413 |
+| **Mask + L1 refiner** | **33.405** | **0.0342** |
+| Mask + flow-matching refiner | 32.031 | 0.0513 |
+| Mask + flow matching, mean of 4 samples | 32.704 | 0.0374 |
+
+L1 performs best on both metrics in this comparison. Averaging FM samples improves LPIPS over the mask-only reference, but reduces PSNR. The mask-only model has **95,185 trainable parameters**; the refiner is a separate, larger extension.
+
+Sources: [test metrics](results/test_metrics.csv), [paired comparisons](results/paired_comparisons.csv), and [experiment definitions and limitations](results/README.md).
+
 ## Start here
 
 - [Executed notebook](occlusion_aware_frame_interpolation_final.ipynb): explanation, formulas, results and two-frame inference; training is disabled by default.
