@@ -17,7 +17,7 @@ def main():
     root = Path(__file__).resolve().parents[1]
     strength = json.loads((root / "artifacts/heuristic_selection.json").read_text())["strength"]
     interp = Interpolator(root / "runs/mask_s42/best.pt", "cuda", strength)
-    frames = torch.from_numpy(np.load(root / "artifacts/demo_triplets.npz")["frames"][0]).cuda().float()/255
+    frames = torch.from_numpy(np.load(root / "demo/demo_triplets.npz")["frames"][0]).cuda().float()/255
     a, b = frames[0:1], frames[2:3]
     # Time the actual deployed learned path, excluding optional baseline visualizations.
     @torch.inference_mode()

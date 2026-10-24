@@ -16,7 +16,7 @@ def paired_ci(d, rng, repeats=2000):
 def main():
     out = Path("artifacts")
     paths = sorted(out.glob("masks_test_rank*.csv"))
-    assert len(paths) == 5, paths
+    assert paths, 'Run evaluate_masks.py --split test first'
     df = pd.concat([pd.read_csv(p) for p in paths], ignore_index=True)
     assert not df.duplicated(["key", "method"]).any()
     assert (df.groupby("method").size() == 3782).all()

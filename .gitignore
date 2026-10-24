@@ -1,8 +1,13 @@
 .venv/
 __pycache__/
 .ipynb_checkpoints/
-data/*npy
-data/downloads/
-runs/*/latest.pt
+.DS_Store
+artifacts/
+runs/
 logs/
+data/*.npy
+data/downloads/
+data/*_cache_rank*.json
+data/*_report.json
+data/cache_DONE.json
 *.partial

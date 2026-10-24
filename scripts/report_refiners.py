@@ -22,9 +22,9 @@ def main():
     pd.DataFrame(validation).to_csv(root / "refiner_validation_summary.csv", index=False)
     summaries, cis = [], []
     rng = np.random.default_rng(42)
-    for experiment in ("test_l1", "test_fm", "test_fm_mean4", "test_selected_fm"):
+    for experiment in ("test_l1", "test_fm", "test_fm_mean4"):
         paths = sorted((root / experiment).glob("metrics_rank*.csv"))
-        assert len(paths) == 5, (experiment, paths)
+        assert paths, (experiment, 'Run evaluate_refiner.py first')
         df = pd.concat([pd.read_csv(p) for p in paths], ignore_index=True)
         assert not df.duplicated(["key", "method"]).any()
         assert (df.groupby("method").size() == 3782).all()

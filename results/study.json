@@ -1,0 +1,232 @@
+{
+  "data": {
+    "train_source": [
+      "bijinc/vimeo-90k-medium",
+      "17ba080aa556c0050d6c560115259e26c03291f9"
+    ],
+    "test_source": [
+      "paschalc24/vimeo-90k-test-full",
+      "7af0ffe8b63dabcadb4dee8cf8c543e269dffb5b"
+    ],
+    "counts": {
+      "train": 1200,
+      "val": 150,
+      "test": 3782
+    },
+    "val_prefixes": [
+      "00001",
+      "00007",
+      "00032",
+      "00036",
+      "00053",
+      "00056",
+      "00060",
+      "00074",
+      "00075",
+      "00078"
+    ],
+    "excluded": [
+      {
+        "key": "00022/0224",
+        "reason": "test overlap"
+      },
+      {
+        "key": "00051/0168",
+        "reason": "pool duplicate"
+      },
+      {
+        "key": "00017/0424",
+        "reason": "pool duplicate"
+      },
+      {
+        "key": "00053/0570",
+        "reason": "pool duplicate"
+      },
+      {
+        "key": "00053/0134",
+        "reason": "pool duplicate"
+      },
+      {
+        "key": "00016/0119",
+        "reason": "pool duplicate"
+      },
+      {
+        "key": "00058/0033",
+        "reason": "pool duplicate"
+      },
+      {
+        "key": "00053/0431",
+        "reason": "pool duplicate"
+      },
+      {
+        "key": "00072/0316",
+        "reason": "pool duplicate"
+      },
+      {
+        "key": "00011/0913",
+        "reason": "pool duplicate"
+      },
+      {
+        "key": "00067/0484",
+        "reason": "pool duplicate"
+      },
+      {
+        "key": "00069/0376",
+        "reason": "pool duplicate"
+      },
+      {
+        "key": "00037/0561",
+        "reason": "pool duplicate"
+      },
+      {
+        "key": "00047/0810",
+        "reason": "pool duplicate"
+      },
+      {
+        "key": "00068/0655",
+        "reason": "pool duplicate"
+      },
+      {
+        "key": "00044/0959",
+        "reason": "pool duplicate"
+      },
+      {
+        "key": "00026/0251",
+        "reason": "pool duplicate"
+      },
+      {
+        "key": "00027/0374",
+        "reason": "pool duplicate"
+      },
+      {
+        "key": "00042/0240",
+        "reason": "pool duplicate"
+      },
+      {
+        "key": "00027/0458",
+        "reason": "pool duplicate"
+      },
+      {
+        "key": "00004/0523",
+        "reason": "pool duplicate"
+      },
+      {
+        "key": "00032/0354",
+        "reason": "pool duplicate"
+      },
+      {
+        "key": "00060/0240",
+        "reason": "pool duplicate"
+      },
+      {
+        "key": "00054/0225",
+        "reason": "pool duplicate"
+      },
+      {
+        "key": "00043/0492",
+        "reason": "pool duplicate"
+      },
+      {
+        "key": "00028/0337",
+        "reason": "pool duplicate"
+      },
+      {
+        "key": "00013/0197",
+        "reason": "pool duplicate"
+      },
+      {
+        "key": "00010/0713",
+        "reason": "pool duplicate"
+      },
+      {
+        "key": "00010/0848",
+        "reason": "pool duplicate"
+      },
+      {
+        "key": "00063/0692",
+        "reason": "pool duplicate"
+      },
+      {
+        "key": "00063/0760",
+        "reason": "pool duplicate"
+      }
+    ],
+    "split_rule": "mirror train subset, exclude all test IDs and exact decoded-frame hashes, disjoint directory prefixes for train/val",
+    "limitation": "Directory prefixes are not verified original-video IDs; near-duplicate scenes are not excluded.",
+    "frame_order": [
+      "im1",
+      "im2 (ground truth)",
+      "im3"
+    ],
+    "files": {
+      "downloads/bijinc__vimeo-90k-medium/data/train-00000-of-00025.parquet": "45a0f560d56578fda8366b1cc7ce670e3041dd492d0bbf272520f83bbd57139b",
+      "downloads/bijinc__vimeo-90k-medium/data/train-00001-of-00025.parquet": "4f64ebe82b8d0175918a4278dfdbbe1e85f48348b897eef05569c4720488b9fd",
+      "downloads/bijinc__vimeo-90k-medium/data/train-00002-of-00025.parquet": "55925625ce6c326fd5295b4c142000285fa408836d7c48d5f9e222d05a65a960",
+      "downloads/paschalc24__vimeo-90k-test-full/data/test-00000-of-00004.parquet": "47aae9eb9c08b43405664111233fe998565b255995f632ba675522e8c4e0f4b5",
+      "downloads/paschalc24__vimeo-90k-test-full/data/test-00001-of-00004.parquet": "43010b33bd1a6dad66d8b1b2a6bce3146cd97fe9cf492da5684b8e31b541c974",
+      "downloads/paschalc24__vimeo-90k-test-full/data/test-00002-of-00004.parquet": "5e6f83c7b2ec60a9b6bf418ca382332d41e8b6e5a40a1ff151ef5470371e7c81",
+      "downloads/paschalc24__vimeo-90k-test-full/data/test-00003-of-00004.parquet": "1289b168ccd6022c6c4e76c772eb87994db6b79d2518ed4c92057b30db9e1db7"
+    }
+  },
+  "runtime": {
+    "gpu": "NVIDIA H100 80GB HBM3",
+    "resolution": "256x448",
+    "batch_size": 1,
+    "repetitions": 30,
+    "warmup": 5,
+    "torch": "2.14.1+cu126",
+    "precision": "fp32 with fp16 flow/features round-trip; TF32 convolution allowed",
+    "flow_warp_features_median_ms": 54.3658379901899,
+    "mask_and_blend_median_ms": 0.8399219950661063,
+    "full_pipeline_median_ms": 56.03903450537473
+  },
+  "heuristic_strength": 0.5,
+  "disagreement_subgroups": [
+    {
+      "quartile": 1,
+      "n": 946,
+      "dis_fraction_min": 0.00067138671875,
+      "dis_fraction_max": 0.0377197265625,
+      "delta_psnr": 0.3666980654694313,
+      "ci_lo": 0.3274774354809686,
+      "ci_hi": 0.4106031238402675,
+      "delta_mae": -0.0001742617238458
+    },
+    {
+      "quartile": 2,
+      "n": 945,
+      "dis_fraction_min": 0.0377284458705357,
+      "dis_fraction_max": 0.0645664760044642,
+      "delta_psnr": 0.4216726797598379,
+      "ci_lo": 0.3710732944427974,
+      "ci_hi": 0.4732451056929492,
+      "delta_mae": -0.0004437978012319
+    },
+    {
+      "quartile": 3,
+      "n": 945,
+      "dis_fraction_min": 0.0646013532366071,
+      "dis_fraction_max": 0.09832763671875,
+      "delta_psnr": 0.3396307486074942,
+      "ci_lo": 0.2969110593846235,
+      "ci_hi": 0.3837307843203266,
+      "delta_mae": -0.0006195749998802
+    },
+    {
+      "quartile": 4,
+      "n": 946,
+      "dis_fraction_min": 0.0983450753348214,
+      "dis_fraction_max": 0.3381260463169643,
+      "delta_psnr": 0.2088077859697079,
+      "ci_lo": 0.1748797186333331,
+      "ci_hi": 0.2426816818326018,
+      "delta_mae": -0.0007759325799924
+    }
+  ],
+  "demo_psnr": {
+    "00013/0619": 24.42687606811523,
+    "00022/0351": 32.936317443847656,
+    "00035/0746": 31.291027069091797
+  },
+  "interpretation": "The primary seed-42 learned mask improves mean test PSNR by +0.334 dB over fixed blending (paired triplet-bootstrap 95% CI [+0.314, +0.356]) and by +0.253 dB over the validation-selected heuristic.\nSSIM changes from 0.94730 to 0.95076; MAE changes from 0.011315 to 0.010812.\nAll three mask seeds improve mean test PSNR over fixed blending. Regional results support benefits in the chosen disagreement/occlusion-related proxies, but these are not ground-truth occlusion annotations.\nGains are positive in all four warp-disagreement quartiles, but they are not monotonic: the lowest-disagreement quartile gains +0.367 dB and the highest gains +0.209 dB. Larger absolute MAE reductions in difficult examples do not imply larger dB gains. This is consistent with limits of blending under imperfect warping, but does not establish the cause of each failure.\nPost-hoc border diagnostic: after removing a 16-pixel border on all sides, the learned-mask gain over fixed blending is +0.234 dB (paired 95% CI [+0.215, +0.253]). This check was added after inspecting qualitative examples; it was not used to select or retrain any model.\nThe L1 refiner reaches 33.405 dB and LPIPS 0.0342. Baseline FM reaches 32.031 dB and LPIPS 0.0513. Validation-selected FM reaches 32.031 dB and LPIPS 0.0513.\nFour-sample FM averaging reaches 32.704 dB and LPIPS 0.0374: its LPIPS improves over the mask-only reference, while PSNR remains lower. Thus FM averaging shows a metric trade-off, rather than failure on every metric. L1 still performs better on both metrics and uses a single refiner call.\nValidation selected runs/fm at checkpoint step 2000, with euler 20 and guidance 1. If this matches the baseline configuration, the selected-FM row is a repeated evaluation of that same model, not a separate improved method.\nThe strongest tested refiner by mean test PSNR is l1; this is a descriptive comparison, not a test-driven model-selection rule.\nValidation sampler diagnostics: Euler 20 gives pooled disagreement PSNR 21.116 dB; Euler 100 gives 20.957; Heun 100 gives 20.915. More integration steps do not guarantee a better reconstruction with an imperfect learned velocity field.\nOn the condition-dropout checkpoint, guidance weights 1 / 2 / 3 give validation disagreement PSNR 20.155 / 17.909 / 16.165 dB. This sweep does not support stronger CFG for this configuration.\nLonger-training controls: baseline FM 30k gives validation disagreement PSNR 20.993 dB; EMA + logit-normal + 30k gives 20.220 dB. These are separate from-scratch learning-rate schedules, evaluated through their best validation checkpoints.\nThe study establishes a result for this limited configuration. Learned visibility-aware blending is an established idea; our contribution is implementation and controlled analysis with frozen RAFT-small. The study is neither a new interpolation algorithm nor an exact reproduction of a prior paper.\nLimitations: 1,200 training triplets, three mask seeds but one refiner seed, unknown source-video correlations, proxy visibility regions, and imperfect flow. The oracle uses ground truth and only bounds squared error for convex blending. Statistical intervals resample triplets.\n"
+}
